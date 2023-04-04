@@ -1,5 +1,5 @@
 import React from 'react'
-import Footer from '../Footer/Footer'
+import Footer from '../Footer/Footerf'
 import Header from '../Header/Header'
 import Routers from '../../routers/Routers'
 
