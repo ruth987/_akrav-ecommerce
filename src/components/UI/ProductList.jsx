@@ -1,15 +1,13 @@
 import React from 'react'
 import ProductCard from './ProductCard'
 
-const ProductList = () => {
+const ProductList = ({data}) => {
   return (
-    <div className='flex flex-wrap '>
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
+    <div className="flex mb-64">
+      {data.map((product) => (
+        <ProductCard key = {product.id} product={product} />
+      ))}
     </div>
   )
 }
-
 export default ProductList

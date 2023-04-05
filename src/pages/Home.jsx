@@ -1,11 +1,23 @@
-import React from 'react'
+import React,{useState, useEffect} from 'react'
 import { Button } from 'flowbite-react'
 import { Link } from 'react-router-dom'
 import homeImg from '../assets/images/home.jpg'
 import Services from '../Services/Services'
 import ProductList from '../components/UI/ProductList'
+import products from '../assets/data/products'
 import Adv from '../Adv/Adv'
 const Home = () => {
+  const [data, setData] = useState([])
+
+  useEffect(() => {
+    const filteredProducts = products.filter((product) => product.status === "Trending")
+    setData(filteredProducts)
+    console.log(data)
+  }, [])
+  useEffect(() => {
+    console.log(data)
+  }, [data])
+
   return (
     <>
       <div className='bg-gray-100'>
@@ -32,7 +44,8 @@ const Home = () => {
         <Services />
       </div>
       <h1 className='text-center text-4xl m-14'>Trending Products</h1>
-      <ProductList />
+      <ProductList data={data}/>
+      
 
       <Adv />
     </>

@@ -1,6 +1,9 @@
 import React from 'react'
 import { Carousel } from 'flowbite-react'
-import home2 from '../assets/images/home2.jpg'
+import img1 from "../assets/images/ad1.jpg"
+import img2 from "../assets/images/ad2.jpg"
+import img3 from "../assets/images/ad3.jpg"
+import img4 from "../assets/images/ad4.jpg"
 
 function Adv() {
   return (
@@ -8,19 +11,19 @@ function Adv() {
     <div className="h-56 sm:h-64 xl:h-80 2xl:h-96">
         <Carousel>
             <img
-                src={home2}
+                src={img1}
                 alt="..."
             />
             <img
-                src={home2}
+                src={img2}
                 alt="..."
             />
             <img
-                src={home2}
+                src={img3}
                 alt="..."
             />
             <img
-                src={home2}
+                src={img4}
                 alt="..."
             />
         </Carousel>
