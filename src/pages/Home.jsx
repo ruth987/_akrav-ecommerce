@@ -12,11 +12,7 @@ const Home = () => {
   useEffect(() => {
     const filteredProducts = products.filter((product) => product.status === "Trending")
     setData(filteredProducts)
-    console.log(data)
   }, [])
-  useEffect(() => {
-    console.log(data)
-  }, [data])
 
   return (
     <>
@@ -30,6 +26,7 @@ const Home = () => {
             <Button
               outline={true}
               gradientDuoTone="greenToBlue"
+              className='transform hover:scale-110'
             >
             <Link to="/shop">Shop Now</Link> 
             </Button>
@@ -45,8 +42,10 @@ const Home = () => {
       </div>
       <h1 className='text-center text-4xl m-14'>Trending Products</h1>
       <ProductList data={data}/>
+      <h1 className='text-center text-4xl m-14'>Best Sales</h1>
       
-
+      <h1 className='text-center text-4xl m-14'>New Arrivals</h1>
+      <h1 className='text-center text-4xl m-14'>Popular</h1>
       <Adv />
     </>
   )

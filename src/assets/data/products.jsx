@@ -24,10 +24,9 @@ import shoe10 from "../images/shoe10.jpg"
 const products = [
     {
       id: "01",
-      productName: "Stone and Beam Westview ",
+      productName: "converse ",
       imgUrl: shoe1,
-      category: "shoes",
-      sex:"both",
+      category:"both",
       price: 193,
       shortDesc:
         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur iure quas illo voluptates labore tempore!",
@@ -40,14 +39,13 @@ const products = [
         },
       ],
       avgRating: 4.5,
-      status: "Trending"
+      status: "notTrending"
     },
     {
         id: "02",
-        productName: "Stone and Beam Westview ",
+        productName: "coverse",
         imgUrl: shoe2,
-        category: "shoes",
-        sex:"both",
+        category:"both",
         price: 193,
         shortDesc:
           "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur iure quas illo voluptates labore tempore!",
@@ -60,14 +58,13 @@ const products = [
           },
         ],
         avgRating: 4.5,
-        status: "notTrending"
+        status: "Trending"
     },
     {
         id: "03",
-        productName: "Stone and Beam Westview ",
+        productName: "coverse ",
         imgUrl: shoe3,
-        category: "shoes",
-        sex:"both",
+        category:"both",
         price: 193,
         shortDesc:
           "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur iure quas illo voluptates labore tempore!",
@@ -84,10 +81,9 @@ const products = [
       },
       {
         id: "04",
-        productName: "Stone and Beam Westview ",
+        productName: "snickers ",
         imgUrl: shoe4,
-        category: "shoes",
-        sex:"both",
+        category:"both",
         price: 193,
         shortDesc:
           "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur iure quas illo voluptates labore tempore!",
@@ -104,10 +100,9 @@ const products = [
       },
       {
         id: "05",
-        productName: "Stone and Beam Westview ",
+        productName: "snickers",
         imgUrl: shoe5,
-        category: "shoes",
-        sex:"both",
+        category:"both",
         price: 193,
         shortDesc:
           "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur iure quas illo voluptates labore tempore!",
@@ -124,30 +119,9 @@ const products = [
       },
       {
         id: "06",
-        productName: "Stone and Beam Westview ",
+        productName: "snickers ",
         imgUrl: shoe6,
-        category: "shoes",
-        sex:"both",
-        price: 193,
-        shortDesc:
-          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur iure quas illo voluptates labore tempore!",
-        description:
-          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio nostrum accusantium iste, voluptas cumque provident! Consequatur officiis animi rem tempore voluptate cumque hic similique aperiam ut consectetur distinctio repudiandae quia quam quos, quas illo, iusto, necessitatibus odio veniam exercitationem quis voluptatibus debitis laboriosam! Esse debitis obcaecati blanditiis at impedit quibusdam!",
-        reviews: [
-          {
-            rating: 4.7,
-            text: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-          },
-        ],
-        avgRating: 4.5,
-        status: "Trending"
-      },
-      {
-        id: "07",
-        productName: "Stone and Beam Westview ",
-        imgUrl: shoe7,
-        category: "shoes",
-        sex:"both",
+        category:"both",
         price: 193,
         shortDesc:
           "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur iure quas illo voluptates labore tempore!",
@@ -163,11 +137,29 @@ const products = [
         status: "notTrending"
       },
       {
+        id: "07",
+        productName: "snickers",
+        imgUrl: shoe7,
+        category:"both",
+        price: 193,
+        shortDesc:
+          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur iure quas illo voluptates labore tempore!",
+        description:
+          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio nostrum accusantium iste, voluptas cumque provident! Consequatur officiis animi rem tempore voluptate cumque hic similique aperiam ut consectetur distinctio repudiandae quia quam quos, quas illo, iusto, necessitatibus odio veniam exercitationem quis voluptatibus debitis laboriosam! Esse debitis obcaecati blanditiis at impedit quibusdam!",
+        reviews: [
+          {
+            rating: 4.7,
+            text: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+          },
+        ],
+        avgRating: 4.5,
+        status: "Trending"
+      },
+      {
         id: "08",
-        productName: "Stone and Beam Westview ",
+        productName: "snickers ",
         imgUrl: shoe8,
-        category: "shoes",
-        sex:"both",
+        category:"both",
         price: 193,
         shortDesc:
           "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur iure quas illo voluptates labore tempore!",
@@ -184,10 +176,9 @@ const products = [
       },
       {
         id: "09",
-        productName: "Stone and Beam Westview ",
+        productName: "boots",
         imgUrl: shoe9,
-        category: "shoes",
-        sex:"both",
+        category:"both",
         price: 193,
         shortDesc:
           "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur iure quas illo voluptates labore tempore!",
@@ -204,10 +195,9 @@ const products = [
       },
       {
         id: "10",
-        productName: "Stone and Beam Westview ",
+        productName: "boots",
         imgUrl: shoe10,
-        category: "shoes",
-        sex:"both",
+        category:"both",
         price: 193,
         shortDesc:
           "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur iure quas illo voluptates labore tempore!",

@@ -4,8 +4,11 @@ import { Navbar } from 'flowbite-react'
 import { Dropdown } from 'flowbite-react'
 import { Avatar } from 'flowbite-react'
 import logo from '../../assets/images/logo.jpg'
+import { useSelector } from 'react-redux'
 
 const Header = () => {
+  const totalQuantity = useSelector(state => state.cart.totalQuantity)
+
   return (
     <div className='shadow-lg'>
     <Navbar
@@ -43,7 +46,8 @@ const Header = () => {
           Settings
         </Dropdown.Item>
         <Dropdown.Item>
-          Earnings
+          Cart({totalQuantity})
+
         </Dropdown.Item>
         <Dropdown.Divider />
         <Dropdown.Item>

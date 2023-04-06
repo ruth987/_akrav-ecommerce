@@ -3,7 +3,7 @@ import { Footer } from 'flowbite-react'
 import logo from '../../assets/images/logo.jpg'
 const Footerf = () => {
   return (
-    <div className=''>
+    <div className='my-20'>
     <Footer container={true}>
       <div className="w-full text-center">
         <div className="w-full justify-between sm:flex sm:items-center sm:justify-between">

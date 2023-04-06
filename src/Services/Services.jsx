@@ -6,7 +6,7 @@ import img4 from '../assets/images/support.jpg'
 
 const Service = ({img, title, description}) => {
     return (
-        <div className="w-1/4 p-4 m-4 bg-gray-200">
+        <div className="w-1/4 p-4 m-4 bg-gray-200 transform hover:scale-110">
             <div className="flex items-center">
             <div >
                 <img className="w-12 h-12 rounded-full mr-4" src = {img}></img>
