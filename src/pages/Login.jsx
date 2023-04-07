@@ -1,12 +1,30 @@
 import React, {useState} from 'react'
 import { FaGoogle } from 'react-icons/fa';
 import logo from '../assets/images/logo.jpg'
+import { createUserWithEmailAndPassword } from 'firebase/auth';
+import { auth } from '../firebase.config'; 
+
+
 
 
 const Login = () => {
 
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
+  const [loading, setLoading] = useState(false);
+
+  const signin =  async(e) =>{
+    e.preventDefault();
+    try {
+      setLoading(true);
+      const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+      const user = userCredential.user;
+      console.log(user);
+      
+    } catch (error) {
+      
+    }
+  }
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
@@ -56,6 +74,7 @@ const Login = () => {
           <div>
           <button
             type="submit"
+            onClick={signin}
             className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-blue-600 hover:bg-blue-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
           >
             Sign in
