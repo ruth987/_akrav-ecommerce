@@ -7,8 +7,7 @@ import Signup from '../pages/Signup'
 import Cart from '../pages/Cart'
 import Login from '../pages/Login'
 import Checkout from '../pages/Checkout'
-import Services from '../Services/Services.jsx'
-import Contact from '../pages/Contact'
+import Services from '../Services/Services.jsx' 
 
 
 const Routers = () => {
@@ -22,8 +21,7 @@ const Routers = () => {
       <Route path="/cart" element={<Cart />} />
       <Route path="/login" element={<Login />} />
       <Route path="/checkout" element={<Checkout />} />
-      <Route path="/services" element={<Services />} />
-      <Route path="/contact" element={<Contact />} />
+      <Route path="/services" element={<Services />} />"
 
     </Routes>
   )

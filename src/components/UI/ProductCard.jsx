@@ -13,7 +13,7 @@ const ProductCard = (item) => {
     dispatch(cartActions.addToCart({
       id: item.product.id,
       productName: item.product.productName,
-      image: item.product.imgUrl,
+      imgUrl: item.product.imgUrl,
       price: item.product.price,
     }))
     toast.success('Item added to cart')
@@ -26,7 +26,9 @@ const ProductCard = (item) => {
     imgAlt="Apple Watch Series 7 in colors pink, silver, and black"
     imgSrc={item.product.imgUrl}
   >
-    <a href="#">
+  //link to ProductDetail page for that product's id number shop/id
+      <a href={`/shop/${item.product.id}`}>
+
       <h6 className="text-xl font-semibold tracking-tight text-gray-900 dark:text-white">
         {item.product.productName}
       </h6>

@@ -5,9 +5,14 @@ import { Dropdown } from 'flowbite-react'
 import { Avatar } from 'flowbite-react'
 import logo from '../../assets/images/logo.jpg'
 import { useSelector } from 'react-redux'
+import { useNavigate } from 'react-router-dom'
 
 const Header = () => {
   const totalQuantity = useSelector(state => state.cart.totalQuantity)
+  const navigate = useNavigate()
+  const navigateToCart = () => {
+    navigate('/cart')
+  }
 
   return (
     <div className='shadow-lg'>
@@ -46,7 +51,7 @@ const Header = () => {
           Settings
         </Dropdown.Item>
         <Dropdown.Item>
-          Cart({totalQuantity})
+          <button onClick={navigateToCart}>Cart({totalQuantity})</button>
 
         </Dropdown.Item>
         <Dropdown.Divider />
@@ -66,14 +71,15 @@ const Header = () => {
       <Navbar.Link href="/shop">
         Shop
       </Navbar.Link>
-      <Navbar.Link href="/cart">
-        Cart
+      
+      <Navbar.Link onClick={navigateToCart} >
+      <button className='hover:cursor-pointer' onClick={navigateToCart}>Cart({totalQuantity})</button>
       </Navbar.Link>
       <Navbar.Link href="/services">
         Services
       </Navbar.Link>
-      <Navbar.Link href="/contact">
-        Contact
+      <Navbar.Link href="/checkout">
+        Checkout
       </Navbar.Link>
     </Navbar.Collapse>
   </Navbar>
