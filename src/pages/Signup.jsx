@@ -10,7 +10,8 @@ import { auth } from '../firebase.config';
 import { storage } from '../firebase.config';
 
 import { toast } from "react-toastify"
-import { Navigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import { signInWithGoogle } from '../firebase.config';
 
 
 
@@ -20,7 +21,7 @@ const Signup = () => {
   const [password, setPassword] = useState('')
   const [file, setFile] = useState(null)
   const [loading, setLoading] = useState(false);
-  const [navigate, setNavigate] = useState(false);
+  const navigate = useNavigate();
 
 
 const signup =  async(e) =>{
@@ -57,11 +58,12 @@ const signup =  async(e) =>{
     
     setLoading(false);
     toast.success("Account created successfully");
-    navigate('/login')
+    navigate(
+      '/login')
     
   } catch (error) {
     setLoading(false);
-    toast.error("Something went wrong");
+    toast.error(error.message);
   }
 }
   
@@ -77,6 +79,7 @@ const signup =  async(e) =>{
     <div className="max-w-md w-full space-y-8">
     <div>
     <img className="mx-auto h-16 w-auto" src={logo} alt="Workflow" />
+
     <h2 className="mt-6 text-center text-3xl font-extrabold text-gray-900">
     Create an Account
     </h2>
@@ -118,10 +121,12 @@ const signup =  async(e) =>{
           >
             Create an Account
           </button>
+
         </div>
           <div>
             <button
               type="submit"
+              onClick={signInWithGoogle}
               className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-blue-600 hover:bg-blue-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
             >
               <span className="absolute left-0 inset-y-0 [flex items](poe://www.poe.com/_api/key_phrase?phrase=flex%20items&prompt=Tell%20me%20more%20about%20flex%20items.)-center pl-3 pt-2">

@@ -1,8 +1,11 @@
 import React, {useState} from 'react'
 import { FaGoogle } from 'react-icons/fa';
 import logo from '../assets/images/logo.jpg'
+import { Link, useNavigate } from 'react-router-dom';
 import { createUserWithEmailAndPassword } from 'firebase/auth';
 import { auth } from '../firebase.config'; 
+import { signInWithEmailAndPassword } from 'firebase/auth';
+import {toast} from 'react-toastify'
 
 
 
@@ -12,21 +15,34 @@ const Login = () => {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [loading, setLoading] = useState(false);
+  const navigate = useNavigate();
 
   const signin =  async(e) =>{
     e.preventDefault();
+    setLoading(true);
     try {
-      setLoading(true);
-      const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+      
+      const userCredential = await signInWithEmailAndPassword(auth, email, password);
+
       const user = userCredential.user;
+
       console.log(user);
+      setLoading(false);
+      toast.success("successfully logged in");
+      navigate('/checkout')
       
     } catch (error) {
+      setLoading(false);
+      toast.error(error.message);
       
     }
   }
 
   return (
+    loading ? <div className="flex justify-center items-center h-screen">
+    <div className="animate-spin rounded-full h-32 w-32 border-t-2 border-b-2 border-blue-500"></div>
+    </div> :
+    
     <div className="min-h-screen flex items-center justify-center bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
     <div className="max-w-md w-full space-y-8">
     <div>
@@ -79,6 +95,7 @@ const Login = () => {
           >
             Sign in
           </button>
+
         </div>
           <div>
             <button
