@@ -35,8 +35,7 @@ const ProductDetail = () => {
       <div className='bg-gray-100'>
         <div className="flex flex-row flex-wrap">
           <div className="w-1/2 pr-8">
-            <img src={product.imgUrl} alt="Example image" className="w-full h-auto object-cover" />
-            {product.imgUrl}
+            <img src={product.imgUrl} alt="Example image" className="w-full h-96 object-cover py-2 px-2 my-8 rounded-md" />
           </div>
         <div className="w-1/2 px-4 py-8 text-center pt-20">
           <h3 className="text-2xl font-bold mb-4">{product.productName}</h3>

@@ -100,17 +100,17 @@ const TableRows = ({item}) => {
     <Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800">
     <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
      <button onClick={navigateToProductDetail}>
-     <img className='w-16 h-16 rounded shadow-md hover:cursor-pointer'  src={item.imgUrl}/>
+     <img className='w-16 h-16 rounded shadow-md hover:cursor-pointer' src={item.imgUrl}/>
      </button> 
     </Table.Cell>
     <Table.Cell>
     {item.productName}
     </Table.Cell>
     <Table.Cell>
-     {item.quantity}
+    {item.price}
     </Table.Cell>
     <Table.Cell>
-      {item.price}
+      {item.quantity}
     </Table.Cell>
     <Table.Cell>
       <button

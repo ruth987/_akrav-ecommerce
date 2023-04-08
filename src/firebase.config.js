@@ -3,6 +3,7 @@ import { initializeApp } from "firebase/app";
 import { getAuth, GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 import { getFirestore } from "firebase/firestore";
 import { getStorage } from "firebase/storage";
+import 'firebase/storage'
 
 const firebaseConfig = {
   apiKey: "AIzaSyDsSgmnN20It1HUxikoW4FqrtAqaIgTrkw",
