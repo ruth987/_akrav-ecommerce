@@ -1,18 +1,32 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
 import { Navbar } from 'flowbite-react'
+import { Link } from 'react-router-dom'
 import { Dropdown } from 'flowbite-react'
 import { Avatar } from 'flowbite-react'
 import logo from '../../assets/images/logo.jpg'
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
+import { logOut } from '../../redux/slices/authSlice'
+
 
 const Header = () => {
   const totalQuantity = useSelector(state => state.cart.totalQuantity)
+  const isLoggedIn = useSelector(state => state.auth.isLogged)
+  const user = useSelector(state=> state.auth.user)
   const navigate = useNavigate()
+  const dispatch = useDispatch()
   const navigateToCart = () => {
     navigate('/cart')
   }
+  const handleLogout = () => {
+    
+      dispatch(logOut("sue"))
+      navigate('/login')
+    
+  }
+
+ 
 
   return (
     <div className='shadow-lg'>
@@ -31,55 +45,52 @@ const Header = () => {
       </span>
     </Navbar.Brand>
     <div className="flex md:order-2">
+
+    {isLoggedIn ?
       <Dropdown
         arrowIcon={false}
         inline={true}
         label={<Avatar alt="User settings" img="https://flowbite.com/docs/images/people/profile-picture-5.jpg" rounded={true}/>}
       >
+     
         <Dropdown.Header>
           <span className="block text-sm">
-            Bonnie Green
+            {user.displayName}
           </span>
           <span className="block truncate text-sm font-medium">
-            name@flowbite.com
+            {user.email}
           </span>
         </Dropdown.Header>
-        <Dropdown.Item>
-          Dashboard
-        </Dropdown.Item>
-        <Dropdown.Item>
-          Settings
-        </Dropdown.Item>
+
         <Dropdown.Item>
           <button onClick={navigateToCart}>Cart({totalQuantity})</button>
 
         </Dropdown.Item>
         <Dropdown.Divider />
         <Dropdown.Item>
-          Sign out
+          <button className='hover:cursor-pointer' onClick={handleLogout}>Logout</button>
         </Dropdown.Item>
-      </Dropdown>
+      </Dropdown> : <Link to="/login">Login</Link>}
       <Navbar.Toggle />
     </div>
     <Navbar.Collapse>
-      <Navbar.Link
-        href="/home"
-        active={true}
-      >
-        Home
-      </Navbar.Link>
-      <Navbar.Link href="/shop">
-        Shop
+    <Navbar.Link 
+    active = {true}>
+
+    <button onClick={()=> navigate('/home')}>Home</button>
+  </Navbar.Link>
+      <Navbar.Link >
+        <button onClick={()=> navigate('/shop')}>Shop</button>
       </Navbar.Link>
       
       <Navbar.Link onClick={navigateToCart} >
       <button className='hover:cursor-pointer' onClick={navigateToCart}>Cart({totalQuantity})</button>
       </Navbar.Link>
-      <Navbar.Link href="/services">
-        Services
+      <Navbar.Link >
+        <button onClick={()=> navigate('/services')}>services</button>
       </Navbar.Link>
-      <Navbar.Link href="/checkout">
-        Checkout
+      <Navbar.Link>
+        <button onClick={()=> navigate('/checkout')}>checkout</button>
       </Navbar.Link>
     </Navbar.Collapse>
   </Navbar>

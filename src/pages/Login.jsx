@@ -6,6 +6,8 @@ import { createUserWithEmailAndPassword } from 'firebase/auth';
 import { auth } from '../firebase.config'; 
 import { signInWithEmailAndPassword } from 'firebase/auth';
 import {toast} from 'react-toastify'
+import { useDispatch } from 'react-redux';
+import { setAuth } from '../redux/slices/authSlice';
 
 
 
@@ -17,6 +19,7 @@ const Login = () => {
   const [loading, setLoading] = useState(false);
 
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   
   const signin =  async(e) =>{
@@ -33,7 +36,9 @@ const Login = () => {
         // want to use navigate to other page
       toast.success("successfully logged in");
       navigate('/checkout')
-      
+      localStorage.setItem('user', JSON.stringify(user));
+      const us = JSON.parse(localStorage.getItem('user'))
+      dispatch(setAuth(us));
     } catch (error) {
       setLoading(false);
       toast.error(error.message);
@@ -93,7 +98,7 @@ const Login = () => {
           <div>
           <button
             type="submit"
-            onSubmit={signin}
+            onClick={signin}
             className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-blue-600 hover:bg-blue-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
           >
             Sign in
@@ -103,6 +108,7 @@ const Login = () => {
           <div>
             <button
               type="submit"
+              onClick={signin}
               className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-blue-600 hover:bg-blue-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
             >
               <span className="absolute left-0 inset-y-0 [flex items](poe://www.poe.com/_api/key_phrase?phrase=flex%20items&prompt=Tell%20me%20more%20about%20flex%20items.)-center pl-3 pt-2">
