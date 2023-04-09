@@ -15,8 +15,10 @@ const Login = () => {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [loading, setLoading] = useState(false);
+
   const navigate = useNavigate();
 
+  
   const signin =  async(e) =>{
     e.preventDefault();
     setLoading(true);
@@ -28,6 +30,7 @@ const Login = () => {
 
       console.log(user);
       setLoading(false);
+        // want to use navigate to other page
       toast.success("successfully logged in");
       navigate('/checkout')
       
@@ -90,7 +93,7 @@ const Login = () => {
           <div>
           <button
             type="submit"
-            onClick={signin}
+            onSubmit={signin}
             className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-blue-600 hover:bg-blue-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
           >
             Sign in

@@ -8,6 +8,7 @@ import Cart from '../pages/Cart'
 import Login from '../pages/Login'
 import Checkout from '../pages/Checkout'
 import Services from '../Services/Services.jsx' 
+import ProtectedRoutes from './ProtectedRoutes'
 
 
 const Routers = () => {
@@ -20,7 +21,11 @@ const Routers = () => {
       <Route path="/signup" element={<Signup />} />
       <Route path="/cart" element={<Cart />} />
       <Route path="/login" element={<Login />} />
-      <Route path="/checkout" element={<Checkout />} />
+      <Route path="/checkout" element={
+        <ProtectedRoutes>
+          <Checkout />
+        </ProtectedRoutes>
+      } />
       <Route path="/services" element={<Services />} />"
 
     </Routes>
